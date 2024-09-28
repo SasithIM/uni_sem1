@@ -124,22 +124,24 @@
 # print(compress_string("aabcccd"))
 
 
-a = 'aaaabcccdaa'
+# a = 'aaaabcccdaa'
 
-if len(a)==len(set(a)):
-    print(a)
-    exit()
-else:
-    prev = ''
-    count = 1
-    out = ''
-    for i in a:
-        if prev == i:
-            count+=1
-        else:
-            out += prev + str(count)
-            prev = i
-            count = 1
-    else:
-        out += prev + str(count)
-    print(out[1:])
+# if len(a)==len(set(a)):
+#     print(a)
+#     exit()
+# else:
+#     prev = ''
+#     count = 1
+#     out = ''
+#     for i in a:
+#         if prev == i:
+#             count+=1
+#         else:
+#             out += prev + str(count)
+#             prev = i
+#             count = 1
+#     else:
+#         out += prev + str(count)
+#     print(out[1:])
+
+
