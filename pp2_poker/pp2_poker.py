@@ -50,6 +50,7 @@ class Hand:
             return 2
         else:
             return 1
+        
 
 def poker(hands):
     hands = hands.split()

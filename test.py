@@ -145,3 +145,57 @@
 #     print(out[1:])
 
 
+# # print('hello \nworld\n'.split('\n'))
+
+# sample_dict = dict(zip(range(1, 11), range(10, 0, -1)))
+
+# # sample_dict[1], sample_dict[2] -= 1,1
+# # num = int('')
+# print(bool(not 'hgjgh'))
+
+def bubble_sort(arr):
+    n = len(arr)
+    comparisons = 0
+    swaps = 0
+    
+    for i in range(n):
+        for j in range(0, n-i-1):
+            comparisons += 1
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swaps += 1
+    
+    return comparisons, swaps
+
+def selection_sort(arr):
+    n = len(arr)
+    comparisons = 0
+    swaps = 0
+    
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            comparisons += 1
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        
+        if min_idx != i:
+            arr[i], arr[min_idx] = arr[min_idx], arr[i]
+            swaps += 1
+    
+    return comparisons, swaps
+
+# Test with worst case scenario (reverse sorted array)
+arr_size = 10
+worst_case_arr = list(range(arr_size, 0, -1))
+
+# Make copies for each sort
+bubble_arr = worst_case_arr.copy()
+selection_arr = worst_case_arr.copy()
+
+bubble_comps, bubble_swaps = bubble_sort(bubble_arr)
+selection_comps, selection_swaps = selection_sort(selection_arr)
+
+print(f"Array size: {arr_size}")
+print(f"Bubble Sort - Comparisons: {bubble_comps}, Swaps: {bubble_swaps}")
+print(f"Selection Sort - Comparisons: {selection_comps}, Swaps: {selection_swaps}")
